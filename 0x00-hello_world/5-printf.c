@@ -3,7 +3,7 @@
 /*
  * main - Entry point
  *
- * Description: 'Print exercise 5 text'
+ * Description: Print exercise 5 text
  *
  * Return: Always 0 (Success)
  */

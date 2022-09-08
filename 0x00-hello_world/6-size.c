@@ -2,7 +2,7 @@
 /*
  * main - Entry point
  *
- * Description: 'Print exercise 6 text'
+ * Description: Print exercise 6 text
  * Return: Always 0 (Success)
  */
 int main(void)
