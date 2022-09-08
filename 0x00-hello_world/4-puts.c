@@ -2,6 +2,7 @@
 /*
  * main - entry point
  *
+ * Description: 'Print exercise 4 text'
  * Return: 0 after printing function
  */
 int main(void)
