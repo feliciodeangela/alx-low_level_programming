@@ -21,14 +21,14 @@ void times_table(void)
 			{
 				if (res >= 10)
 				{
-					_putchar(' ');
 					_putchar(',');
+					_putchar(' ');
 				}
 				else
 				{
-					_putchar(' ');
-					_putchar(' ');
 					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
 				}
 			}
 		}
