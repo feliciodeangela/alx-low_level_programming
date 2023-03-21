@@ -11,7 +11,7 @@ void print_alphabet_x10(void)
 
 	for (j = 0; j < 10; j++)
 	{
-		while (i <= 26)
+		while (i < 26)
 		{
 			abcd[i] = l;
 			_putchar(abcd[i]);
@@ -19,5 +19,7 @@ void print_alphabet_x10(void)
 			i++;
 		}
 		_putchar('\n');
+		l = 'a';
+		i = 0;
 	}
 }
