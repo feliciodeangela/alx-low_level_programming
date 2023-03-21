@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * print_alphabet10x - Entry point.
+ * print_alphabet_x10 - Entry point.
  * Description: Prints the alphabet ten times.
  */
-void print_alphabet10x(void)
+void print_alphabet_x10(void)
 {
 	char abcd[26];
 	char l = 'a';
