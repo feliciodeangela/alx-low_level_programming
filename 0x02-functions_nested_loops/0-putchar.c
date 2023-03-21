@@ -14,4 +14,5 @@ int main(void)
 		_putchar(ptchr[i]);
 		i++;
 	}
+	return (0);
 }
