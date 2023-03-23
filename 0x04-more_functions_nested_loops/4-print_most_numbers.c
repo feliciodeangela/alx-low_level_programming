@@ -5,13 +5,22 @@
  */
 void print_most_numbers(void)
 {
-	int i;
+	int i = 48;
 
-	for (i = 48; i <= 57; i++)
+	while (i != 50 || i != 52)
 	{
-		if (i != 50 || i != 52)
+		_putchar(i);
+		if (i == 49 || i == 51)
 		{
-			_putchar(i);
+			i = i + 2;
+		}
+		else
+		{
+			i++;
+		}
+		if (i > 57)
+		{
+			break;
 		}
 	}
 	_putchar('\n');
