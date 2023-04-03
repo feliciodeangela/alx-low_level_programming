@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * *_memset - Entry point.
+ * _memset - Entry point.
  * Description:  fills the first @n bytes of the memory area pointed to by @s with the constant byte @b.
  * @n: bytes to fill.
  * @s: area of memory to fill.
@@ -12,8 +12,7 @@ char *_memset(char *s, char b, unsigned int n)
 
 	for (i = 0; i < n; i++)
 	{
-		*s = b;
-		*s++;
+		*(s + i) = b;
 	}
-	return s;
+	return (s);
 }
