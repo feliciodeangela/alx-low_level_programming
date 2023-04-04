@@ -2,7 +2,7 @@
 /**
  * _strstr - Entry point
  * @needle: to look
- * @haystavk: to search
+ * @haystack: to search
  * Return: 0
  */
 char *_strstr(char *haystack, char *needle)
