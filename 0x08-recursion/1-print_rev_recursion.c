@@ -7,7 +7,7 @@
 void _print_rev_recursion(char *s)
 {
 	int end = 0;
-	int pEnd = &end;
+	int *pEnd = &end;
 
 	if (end == 0)
 	{
