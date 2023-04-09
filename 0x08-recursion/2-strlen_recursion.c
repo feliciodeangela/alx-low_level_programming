@@ -2,17 +2,20 @@
 /**
  * _strlen_recursion - Entry point.
  * Description: Return length of string.
- * @s: string to count;
- * Return length;
+ * @s: string to count.
+ * Return: string length.
  */
 int _strlen_recursion(char *s)
 {
-	int size = 0;
-
-	if (*s >= '\0')
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	else
 	{
 		size++;
-		_strlen_recursion(s++);
+		s++;
+		_strlen_recursion(s);
 	}
 	return (size);
 }
