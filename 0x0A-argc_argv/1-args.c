@@ -4,11 +4,11 @@
  * Description: Print number of arguments.
  * @argc: number of arguments.
  * @argv: Array of arguments.
- * rETURN: Success 0 | Failure 1.
+ * Return: Success 0 | Failure 1.
  */
 int main(int argc, char *argv[])
 {
 	argv++;
-	printf("%d\n", argc--);
+	printf("%d\n", --argc);
 	return (0);
 }
