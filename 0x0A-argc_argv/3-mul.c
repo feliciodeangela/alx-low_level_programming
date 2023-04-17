@@ -10,6 +10,11 @@ int main(int argc, char *argv[])
 {
 	int i, mul = 1;
 
+	if (argc > 2)
+	{
+		printf("Error\n");
+		return (mul);
+	}
 	for (i = 0; i < argc; i++)
 	{
 		mul = mul * argv[i];
