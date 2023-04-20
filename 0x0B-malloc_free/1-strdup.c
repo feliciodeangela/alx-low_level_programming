@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * _strdup - Entry point.
- * Description: Return pointer to a location where a copy of the provided string is stored.
+ * Description: Return pointer to a location where a 
+ * copy of the provided string is stored.
  * @str: String to copy.
  * Return: Pointer to duplicate of @str | NULL
  */
@@ -19,7 +20,11 @@ char *_strdup(char *str)
 		str++;
 		sz++;
 	}
-	s = malloc(sizeof(*s) * sz);
+	s = malloc(sizeof(*str) * sz);
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	for (j = 0; j < sz; j++)
 	{
 		s[j] = str[j];
