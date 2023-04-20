@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	{
 		return ('\0');
 	}
-	for (i = 0; i > '\0'; i++)
+	for (i = 0; *aux > '\0'; i++)
 	{
 		aux++;
 		sz++;
