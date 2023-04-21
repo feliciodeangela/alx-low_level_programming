@@ -13,7 +13,8 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return ('\0');
+		s = '\0';
+		return (s);
 	}
 	if (s1 != NULL && s2 == NULL)
 	{
@@ -57,5 +58,5 @@ char *str_concat(char *s1, char *s2)
 		s[cnt] = '\0';
 		return (s);
 	}
-	return ('\0');
+	return (s);
 }
