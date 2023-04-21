@@ -17,18 +17,22 @@ char *str_concat(char *s1, char *s2)
 	{
 		return ('\0');
 	}
-	for (i = 0; *s1 > '\0'; i++)
+	for (i = 0; *aux1 > '\0'; i++)
 	{
 		aux1++;
 		p1++;
 	}
-	for (i = 0; *s2 > '\0'; i++)
+	for (i = 0; *aux2 > '\0'; i++)
 	{
 		aux2++;
 		p2++;
 	}
 	sz = p1 + p2;
 	s = malloc(sizeof(*s) * sz);
+	if (s == NULL)
+	{
+		return ('\0');
+	}
 	while (*s1 > '\0')
 	{
 		s[i] = *s1;
