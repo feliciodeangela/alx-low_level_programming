@@ -8,44 +8,49 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s;
-	char *aux1 = s1;
-	char *aux2 = s2;
-	int i = 0, j = 0, p1 = 0, p2 = 0, sz = 0;
+	char *aux, *s;
+	int i = 0, j = 0, cnt = 0;
 
-	for (i = 0; *aux1 > '\0'; i++)
-	{
-		aux1++;
-		p1++;
-	}
-	for (i = 0; *aux2 > '\0'; i++)
-	{
-		aux2++;
-		p2++;
-	}
-	sz = p1 + p2 + 1;
-	s = malloc(sizeof(*s) * sz);
-	if (s == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		return ('\0');
 	}
-	if (s1 != NULL)
+	if (s1 != NULL && s2 == NULL)
 	{
-		while (i < p1)
+		aux = s1;
+		while (*aux >= '\0')
+		{
+			aux++;
+			cnt++;
+		}
+		s = malloc(sizeof(*s) * cnt);
+		if (s == NULL)
+		{
+			return ('\0');
+		}
+		for (i = 0; i < cnt; i++)
 		{
 			s[i] = s1[i];
-			i++;
 		}
+		return (s);
 	}
-	if (s2 != NULL)
+	if (s1 == NULL && s2 != NULL)
 	{
-		while (i < p2)
+		aux = s2;
+		while (*aux >= '\0')
 		{
-			s[i] = s2[j];
-			j++;
-			i++;
+			aux++;
+			cnt++;
 		}
+		s = malloc(sizeof(*s) * cnt);
+		if (s == NULL)
+		{
+			return ('\0');
+		}
+		for (j = 0; j < cnt; j++)
+		{
+			s[j] = s2[j];
+		}
+		return (s);
 	}
-	s[i] = '\0';
-	return (s);
 }
