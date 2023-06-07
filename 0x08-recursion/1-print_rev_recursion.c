@@ -3,7 +3,7 @@
  * Description: Prints @s in reverse.
  * @s: String to print in reverse.
  */
-void _print _rev_recursion(char *s)
+void _print_rev_recursion(char *s)
 {
 	if (*s != '\0')
 	{
