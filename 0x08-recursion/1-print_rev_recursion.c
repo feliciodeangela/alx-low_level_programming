@@ -1,5 +1,6 @@
 #include "main.h"
-/* _print_rev_recursion - entry point.
+/**
+ * _print_rev_recursion - entry point.
  * Description: Prints @s in reverse.
  * @s: String to print in reverse.
  */
