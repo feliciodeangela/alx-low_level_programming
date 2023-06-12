@@ -9,14 +9,14 @@
 char *create_array(unsigned int size, char c)
 {
 	char *ar;
-	int i;
+	unsigned int i;
 
 	if (size == 0)
 	{
 		return ('\0');
 	}
 	ar = malloc(sizeof(*ar) * size);
-	if (ar == '\0')
+	if (*ar == '\0')
 	{
 		return ('\0');
 	}
@@ -24,7 +24,7 @@ char *create_array(unsigned int size, char c)
 	{
 		for (i = 0; i < size; i++)
 		{
-			a[i] = c;
+			ar[i] = c;
 		}
 	}
 	return (ar);
