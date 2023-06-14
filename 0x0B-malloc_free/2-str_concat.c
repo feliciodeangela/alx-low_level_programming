@@ -12,13 +12,9 @@ char *str_concat(char *s1, char *s2)
 	char *restr;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
 	while (*(s1 + i) != '\0')
 	{
 		i++;
@@ -28,18 +24,12 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 	if (i == 0 && j > 0)
-	{
 		j++;
-	}
 	else if (i > 0 && j == 0)
-	{
 		i++;
-	}
-	restr = malloc(sizeof(*restr) * (i + j));
+	restr = malloc(sizeof(*restr) * (i + j) + 1);
 	if (restr == NULL)
-	{
 		return (NULL);
-	}
 	for (k = 0; k < i; k++)
 	{
 		restr[k] = s1[k];
