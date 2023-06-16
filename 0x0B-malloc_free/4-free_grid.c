@@ -2,7 +2,7 @@
 /**
  * free_grid - Entry point
  * Description: Free 2d array.
- * @**grid: Array to free.
+ * @grid: Array to free.
  * @heigth: Array dimension.
  */
 void free_grid(int **grid, int heigth)
