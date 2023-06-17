@@ -9,21 +9,22 @@
 int *array_range(int min, int max)
 {
 	int *res;
-	int i, t = min;
+	int i, in = 0, ax = 0;
 
-	if (min > max)
+	in = min;
+	ax = max;
+	if (in > ax)
 	{
 		return (NULL);
 	}
-	res = malloc(sizeof(*res) * (max - min) + 1);
+	res = malloc(sizeof(*res) * (ax - in) + 1);
 	if (res == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; t <= max; i++)
+	for (i = 0; i < ((ax - in) + 1); i++)
 	{
-		res[i] = t;
-		t++;
+		res[i] = in + i;
 	}
 	return (res);
 }
