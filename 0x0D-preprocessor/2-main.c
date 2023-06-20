@@ -2,6 +2,7 @@
 /**
  * main - Entry point.
  * Description: Print the name of the file (__FILE__) + newLine.
+ * Return: 0;
  */
 int main(void)
 {
@@ -9,5 +10,5 @@ int main(void)
 
 	c = __FILE__;
 	printf("%s\n", c);
-	return(0);
+	return (0);
 }
