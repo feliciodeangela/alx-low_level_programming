@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 /**
- * print_numbers - Entry point.
+ * print_strings - Entry point.
  * Description: Prints Strings then a new line.
  * @separator: Stands between numbers.
  * @n: amount of strings/arguments passed to print.
