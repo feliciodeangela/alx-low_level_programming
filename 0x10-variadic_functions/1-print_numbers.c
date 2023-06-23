@@ -16,6 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	if (s == NULL)
 	{
 		free(s);
+		s = "";
 	}
 	else
 	{
@@ -28,7 +29,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			num = va_arg(args, int);
 			printf("%d", num);
-			if(i < (n - 1))
+			if (i < (n - 1))
 			{
 				printf("%s", s);
 			}
