@@ -4,7 +4,7 @@
  * @head: First list element to free.
  * Description: It properlly frees all elements of a list.
  */
-void free_list(list_t *head)
+/*void free_list(list_t *head)
 {
 	list_t *aux;
 
@@ -16,4 +16,13 @@ void free_list(list_t *head)
 	}
 	free(head->str);
 	free(head);
+}*/
+void free_list(list_t* head) {
+    list_t* current = head;
+    while (current != NULL) {
+        list_t* temp = current;
+        current = current->next;
+        free(temp->str);
+        free(temp);
+    }
 }
