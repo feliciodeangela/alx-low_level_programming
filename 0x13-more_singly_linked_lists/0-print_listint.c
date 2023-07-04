@@ -9,7 +9,7 @@ size_t print_listint(const listint_t *h)
 	unsigned long int s = 0;
 	const listint_t *aux = h;
 
-	while (aux)
+	if (aux != NULL)
 	{
 		printf("%i\n", aux->n);
 		s = s + print_listint(aux->next);
