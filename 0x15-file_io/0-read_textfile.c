@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * read_textfile - Read a file and print it to stdout.
- * filename: Path to file.
- * letters: Number of letters in file.
+ * @filename: Path to file.
+ * @letters: Number of letters in file.
  * Return: Number of letters printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 		return (0);
-	c = malloc(letters +1);
+	c = malloc(letters + 1);
 	if (c == NULL)
 		return (0);
 	fileDesc = open(filename, O_RDONLY);
