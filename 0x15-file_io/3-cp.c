@@ -1,10 +1,13 @@
 #include "main.h"
 /**
- * tranfer - Transfers content from one file to the other.
+ * transfer - Entry point.
+ * Description: Transfers content from one file to the other.
  * @fdf: Source.
  * @fdt: Destination.
+ * @fileDescFrom: Src.
+ * @fileDescTo: Dest.
  */
-void transfer(int fdf, int fdt)
+void transfer(int fdf, int fdt, char *fileDescFrom, char *fileDescTo)
 {
 	int writenLen, total, readLen = 1;
 	char buffr[1024];
@@ -12,10 +15,20 @@ void transfer(int fdf, int fdt)
 	while (readLen != 0)
 	{
 		readLen = read(fdf, buffr, sizeof(buffr));
+		if (fdf < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s", fileDescFrom);
+			exit(98);
+		}
 		writenLen = 0;
 		while (writenLen < readLen)
 		{
 			total = write(fdt, buffr + writenLen, readLen - writenLen);
+			if (fdt < 0)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s", fileDescTo);
+				exit(99);
+			}
 			writenLen = writenLen + total;
 		}
 	}
@@ -24,7 +37,7 @@ void transfer(int fdf, int fdt)
  * main - Copy a file to another.
  * @argc: Number of arguments.
  * @argv: Array of arguments.
- * Return: 97 | 98 | 99 | 100
+ * Return: 97 | 98 | 99 | 100 | 0.
  */
 int main(int argc, char *argv[])
 {
@@ -47,7 +60,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
 		exit(99);
 	}
-	transfer(fileDescFrom, fileDescTo);
+	transfer(fileDescFrom, fileDescTo, argv[1], argv[2]);
 	if ((close(fileDescTo)) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fileDescTo);
