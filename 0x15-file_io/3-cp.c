@@ -1,5 +1,26 @@
 #include "main.h"
 /**
+ * tranfer - Transfers content from one file to the other.
+ * @fdf: Source.
+ * @fdt: Destination.
+ */
+void transfer(int fdf, int fdt)
+{
+	int writenLen, total, readLen = 1;
+	char buffr[1024];
+
+	while (readLen != 0)
+	{
+		readLen = read(fdf, buffr, sizeof(buffr));
+		writenLen = 0;
+		while (writenLen < readLen)
+		{
+			total = write(fdt, buffr + writenLen, readLen - writenLen);
+			writenLen = writenLen + total;
+		}
+	}
+}
+/**
  * main - Copy a file to another.
  * @argc: Number of arguments.
  * @argv: Array of arguments.
@@ -26,7 +47,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
 		exit(99);
 	}
-	tranfer(fileDescFrom, fileDescTo);
+	transfer(fileDescFrom, fileDescTo);
 	if ((close(fileDescTo)) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fileDescTo);
@@ -38,25 +59,4 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	return (0);
-}
-/**
- * tranfer - Transfers content from one file to the other.
- * @fdf: Source.
- * @fdt: Destination.
- */
-void transfer(int fdf, int fdt)
-{
-	int writen, total readLen = 1;
-	char buffr[1024];
-
-	while (readLen != 0)
-	{
-		readLen = read(fdf, buffr, sizeof(buffr));
-		writenLen = 0;
-		while (writenLen < readLen)
-		{
-			total = write(fdt, buffr + writenLen, readLen - writenLen);
-			writenLen = writenLen + total;
-		}
-	}
 }
