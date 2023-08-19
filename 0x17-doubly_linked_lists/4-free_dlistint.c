@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * free_dlisint - Function that frees a dlistint list.
+ * free_dlistint - Function that frees a dlistint list.
  * @head: List to free.
  */
 void free_dlistint(dlistint_t *head)
