@@ -8,14 +8,16 @@
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *aux;
-		
+
 	aux = malloc(sizeof(dlistint_t));
 	if (aux == NULL)
 		return (NULL);
-	aux->prev = aux;
-	aux->next = *head;
-	aux->n = n;
-	*head = aux;
 	aux->prev = NULL;
-	return(aux);
+	aux->n = n;
+	aux->next = NULL;
+	aux->next = *head;
+	if (*head != NULL)
+		(*head)->prev = aux;
+	*head = aux;
+	return (aux);
 }
